@@ -15,6 +15,14 @@
         body{
             font-family: "PGSwitcherDEMO", Arial, sans-serif;
         }
+        .label-title {
+            font-weight: bold;
+            color: green;
+        }
+        .label-option {
+            font-weight: bold;
+            color: black;
+        }
     </style>
 </head>
 <body style="background-color: #dedde3;">
@@ -32,37 +40,30 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ข้อมูลเพิ่มเติม
           </a>
-         
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">สมัครสมาชิก</a></li>
-          
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">สมัครสมาชิก</a></li>
             <li><hr class="dropdown-divider"></li>
-            
-        <li><a class="dropdown-item" href="#">หน้าหลัก</a></li>
-        <li><a class="dropdown-item" href="#">ค้นหาบทความ</a></li>
-        <li><a class="dropdown-item" href="#">อัลบั้มรูปภาพ</a></li>
-        <li><a class="dropdown-item" href="#">เพื่อนสมาชิก</a></li>
-
+            <li><a class="dropdown-item" href="#">หน้าหลัก</a></li>
+            <li><a class="dropdown-item" href="#">ค้นหาบทความ</a></li>
+            <li><a class="dropdown-item" href="#">อัลบั้มรูปภาพ</a></li>
+            <li><a class="dropdown-item" href="#">เพื่อนสมาชิก</a></li>
           </ul>
         </li>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href=""class="nav-link">
-                    <img src="img/house-door-fill.svg">
-                </a>
-            </li>
-         <li class="nav-item">
-            <a href="" class="nav-link">เข้าสู่ระบบ</a>
-        </ul>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <img src="img/house-door-fill.svg">
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">เข้าสู่ระบบ</a>
         </li>
       </ul>
-      </form>
     </div>
   </div>
 </nav>
@@ -175,9 +176,161 @@
     <div class="bg-white p-2 mb-2 mt-4">
         <img src="img/rightpic3.png" style=" width:90%;margin:10px;">
     </div>
+<!--modal-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="loginModalLabel">เข้าสู่ระบบ</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal signup-->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white justify-content-center">
+                <h5 class="modal-title" id="signupModalLabel">Create Account</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close" style="position: absolute; right: 1rem;"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col text-start">
+                            <label for="firstNameInput" class="form-label label-title">First name*</label>
+                            <input type="text" class="form-control" id="firstNameInput" placeholder="enter your first name">
+                        </div>
+                        <div class="col text-start">
+                            <label for="lastNameInput" class="form-label label-title">Last name</label>
+                            <input type="text" class="form-control" id="lastNameInput" placeholder="enter your last name">
+                        </div>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label for="emailInput" class="form-label label-title">Email*</label>
+                        <input type="email" class="form-control" id="emailInput" placeholder="enter your email">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-start">
+                            <label for="passwordInput" class="form-label label-title">Password*</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="enter your password">
+                        </div>
+                        <div class="col text-start">
+                            <label for="confirmPasswordInput" class="form-label label-title">Confirm Password*</label>
+                            <input type="password" class="form-control" id="confirmPasswordInput" placeholder="enter your password again">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-start">
+                            <label class="form-label label-title">Gender:</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="maleRadio">
+                                    <label class="form-check-label label-option" for="maleRadio">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="femaleRadio">
+                                    <label class="form-check-label label-option" for="femaleRadio">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-start">
+                            <label class="form-label label-title">Hobbies:</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="musicCheckbox" style="border-radius: 50%;">
+                                    <label class="form-check-label label-option" for="musicCheckbox">Music</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="sportsCheckbox" style="border-radius: 50%;">
+                                    <label class="form-check-label label-option" for="sportsCheckbox">Sports</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="travelCheckbox" style="border-radius: 50%;">
+                                    <label class="form-check-label label-option" for="travelCheckbox">Travel</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="moviesCheckbox" style="border-radius: 50%;">
+                                    <label class="form-check-label label-option" for="moviesCheckbox">Movies</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-start">
+                            <label for="incomeSource" class="form-label label-title">Source of Income</label>
+                            <select class="form-select" id="incomeSource">
+                                <option selected>Employed</option>
+                                <option>Freelance</option>
+                            </select>
+                        </div>
+                        <div class="col text-start">
+                            <label for="incomeRange" class="form-label label-title">Income</label>
+                            <input type="range" class="form-range" min="20000" max="100000" value="20000" id="incomeRange">
+                            <span id="incomeValue" class="badge bg-success">20K</span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col text-start">
+                            <label for="profilePicture" class="form-label label-title">Upload Profile Picture</label>
+                            <input class="form-control" type="file" id="profilePicture">
+                        </div>
+                        <div class="col text-start">
+                            <label for="ageInput" class="form-label label-title">Age</label>
+                            <input type="number" class="form-control" id="ageInput" placeholder="enter your age">
+                        </div>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label for="bioTextarea" class="form-label label-title">Bio</label>
+                        <textarea class="form-control" id="bioTextarea" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success">Create Account</button>
+            </div>
+        </div>
+    </div>
+</div>    
 </body>
 
 <script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    const incomeRange = document.getElementById('incomeRange');
+    const incomeValue = document.getElementById('incomeValue');
+    incomeRange.addEventListener('input', (event) => {
+        incomeValue.textContent = (event.target.value / 1000) + 'K';
+    });
+
+    const profilePictureInput = document.getElementById('profilePicture');
+    const fileNameDisplay = document.getElementById('fileNameDisplay');
+    profilePictureInput.addEventListener('change', (event) => {
+        if (event.target.files.length > 0) {
+            fileNameDisplay.textContent = event.target.files[0].name;
+        } else {
+            fileNameDisplay.textContent = 'No file chosen';
+        }
+    });
+</script>
 
 
 </html>
